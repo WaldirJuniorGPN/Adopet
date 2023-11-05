@@ -2,8 +2,10 @@ package br.com.alura.domain;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
+@Setter
 @NoArgsConstructor
 public class Abrigo {
 
@@ -17,4 +19,11 @@ public class Abrigo {
         this.telefone = telefone;
         this.email = email;
     }
+    @Override
+    public String toString() {
+        return """
+                     "id":%s,"nome":"%s","telefone":"%s","email":"%s"
+                     """.formatted(this.id, this.nome, this.telefone, this.email);
+    }
+
 }
